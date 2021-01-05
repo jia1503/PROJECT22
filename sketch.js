@@ -43,6 +43,10 @@ background(0);
 
 packageSprite.x= packageBody.position.x;
 packageSprite.y= packageBody.position.y; 
+ 
+ if(packageSprite. isTouching(groundSprite)){
+  Matter.Body.setStatic(packageBody, true);
+ }
 
 keyPressed();
 drawSprites();
