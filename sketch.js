@@ -31,7 +31,7 @@ groundSprite.shapeColor=color(255);
 engine = Engine.create(); 
 world = engine.world; 
 
-packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.8, isStatic:true}); 
+packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.8, isStatic:false}); 
 World.add(world, packageBody);  
 ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} ); 
 World.add(world, ground); Engine.run(engine); 
@@ -44,6 +44,10 @@ background(0);
 packageSprite.x= packageBody.position.x;
 packageSprite.y= packageBody.position.y; 
  
+ if(packageSprite. isTouching(groundSprite)){
+  Matter.Body.setStatic(packageBody, true);
+ }
+
  
 keyPressed();
 drawSprites();
