@@ -31,7 +31,7 @@ groundSprite.shapeColor=color(255);
 engine = Engine.create(); 
 world = engine.world; 
 
-packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:0.8, isStatic:false}); 
+packageBody = Bodies.circle(width/2 , 200 , 5 , {restitution:2, isStatic:true}); 
 World.add(world, packageBody);  
 ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} ); 
 World.add(world, ground); Engine.run(engine); 
